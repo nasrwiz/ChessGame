@@ -171,6 +171,12 @@ function App() {
       // Create a new Chess instance to properly update state
       const newGame = new Chess(game.fen());
       setGame(newGame);
+      // Clear any UI selections or pending promotion state to reflect reverted board
+      setSelectedSquare(null);
+      setValidMoves([]);
+      setPromotionSquare(null);
+      setPendingMove(null);
+      setLastMove(null);
     }
   };
 
